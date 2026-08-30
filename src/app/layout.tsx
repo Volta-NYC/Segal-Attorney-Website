@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description: "Clear, caring legal guidance for New York families from Tatyana Segal, Esq.",
   icons: {
     icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  applicationName: "Segal Law Group, P.C.",
+  formatDetection: {
+    telephone: true,
+    email: true,
   },
 }
 
