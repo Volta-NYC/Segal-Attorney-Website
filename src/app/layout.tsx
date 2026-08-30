@@ -1,10 +1,18 @@
 import "./globals.css"
+import type { Metadata } from "next"
 import Navbar from "@/lib/components/navbar"
 import Footer from "@/lib/components/footer"
 
-export const metadata = {
-  title: "Business Name",
-  description: "Short description of the business."
+export const metadata: Metadata = {
+  metadataBase: new URL("https://segallawgroup.com"),
+  title: {
+    default: "Segal Law Group, P.C. | Brooklyn Attorney",
+    template: "%s | Segal Law Group, P.C.",
+  },
+  description: "Clear, caring legal guidance for New York families from Tatyana Segal, Esq.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({
@@ -14,11 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body>
         <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto px-6 py-12">
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
